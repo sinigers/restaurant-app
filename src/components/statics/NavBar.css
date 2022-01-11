@@ -1,0 +1,32 @@
+.navbar-brand-center {
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.navbar-brand-center img {
+  height: 50px;
+}
+
+#navbar-header {
+  height: 100px;
+}
+#navbar-header .navbar-nav .dropdown-menu {
+  border: none;
+  border-bottom: 2px solid #f34949;
+  border-radius: 0 !important;
+  box-shadow: -5px 8px 20px 0px rgba(229, 16, 2, 0.15);
+}
+
+@media (min-width: 1024px) {
+  #navbar-header .navbar-nav {
+    width: 50%;
+  }
+  #navbar-header .dropdown .dropdown-menu {
+    display: block;
+    opacity: 0;
+    transition: all 500ms ease;
+  }
+  #navbar-header .dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+  }
+}
