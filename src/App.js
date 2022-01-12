@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavBar from "./components/statics/NavBar";
-import NavBarMaterial from "./components/statics/NavBarMaterial";
+import NavBarCustom from "./components/statics/NavBarCustom";
 import Footer from "./components/statics/Footer";
 import "./styles.css";
 
@@ -20,7 +20,7 @@ export default function App() {
     <BrowserRouter>
       <div className="App">
         {/* <NavBar /> */}
-        <NavBarMaterial />
+        <NavBarCustom />
 
         <Routes>
           <Route path="/" element={<App />} />
