@@ -13,7 +13,10 @@ import "./styles.css";
 // import Reservation from "./components/pages/Reservation";
 
 import Home from "./components/pages/Home";
-import Menu from "./components/pages/Menu";
+import Menu from "./components/pages/Menu/Menu";
+import CreateProduct from "./components/Products/Create/CreateProduct";
+import Login from "./components/Auth/Login/Login";
+import Register from "./components/Auth/Register/Register";
 
 export default function App() {
   return (
@@ -26,6 +29,9 @@ export default function App() {
           <Route path="/" element={<App />} />
           <Route index element={<Home />} />
           <Route path="menu" element={<Menu />} />
+          <Route path="create-product" element={<CreateProduct />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
         </Routes>
         <Footer />
       </div>

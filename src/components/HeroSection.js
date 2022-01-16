@@ -42,6 +42,7 @@ const HeroSection = () => {
               </li>
             </ul>
           </div>
+
           <div class="col-lg-6 hero-right">
             <div class="owl-carousel owl-theme hero-carousel">
               <div class="item">

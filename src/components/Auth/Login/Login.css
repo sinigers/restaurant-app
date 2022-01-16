@@ -1,0 +1,229 @@
+html {
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #faf9f7;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+.sign-input,
+.sign-input-error {
+  margin-bottom: 20px;
+}
+.sign-input .input-field,
+.sign-input-error .input-field {
+  width: 280px;
+  height: 48px;
+  border: 0px;
+  background: #ffffff;
+  border-bottom: 1px solid #a0a4a8;
+  color: #26282b;
+  outline: none;
+  padding-left: 24px;
+  padding-top: 30px;
+  padding-bottom: 16px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.sign-input .input-field::-webkit-input-placeholder,
+.sign-input-error .input-field::-webkit-input-placeholder {
+  opacity: 0;
+}
+.sign-input .input-field:-ms-input-placeholder,
+.sign-input-error .input-field:-ms-input-placeholder {
+  opacity: 0;
+}
+.sign-input .input-field::placeholder,
+.sign-input-error .input-field::placeholder {
+  opacity: 0;
+}
+.sign-input .input-field:focus,
+.sign-input-error .input-field:focus {
+  border-bottom: 3px solid #119c59;
+}
+.sign-input .input-label,
+.sign-input-error .input-label {
+  width: 280px;
+  display: block;
+  position: relative;
+  max-height: 0;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.sign-input .input-label::before,
+.sign-input-error .input-label::before {
+  color: #75787c;
+  content: attr(data-content);
+  display: inline-block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-origin: left top;
+  transition: transform 0.2s ease;
+  left: 1rem;
+  position: relative;
+  outline: none;
+  transform: translate3d(7px, -50px, 0) scale3d(0.82, 0.82, 1);
+}
+
+.sign-input .input-field:placeholder-shown + .input-label::before,
+.sign-input-error .input-field:placeholder-shown + .input-label::before {
+  transform: translate3d(7px, -34px, 0) scale3d(1, 1, 1);
+  color: #52575c;
+}
+.sign-input .input-field:focus + .input-label::before,
+.sign-input-error .input-field:focus + .input-label::before {
+  transform: translate3d(7px, -50px, 0) scale3d(0.82, 0.82, 1);
+}
+.sign-input .input-field:focus + .input-label::before,
+.sign-input-error .input-field:focus + .input-label::before {
+  color: #75787c;
+}
+.sign-input .input-end-label::before,
+.sign-input-error .input-end-label::before {
+  width: 35%;
+  position: relative;
+  left: 1rem;
+  display: flex;
+  content: attr(data-content);
+  transform: translate3d(288px, -2.2rem, 0);
+}
+
+.sign-input .input-end-label,
+.sign-input-error .input-end-label {
+  display: block;
+  position: relative;
+  max-height: 0;
+  pointer-events: none;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.sign-btn-gray {
+  width: 280px;
+  height: 48px;
+  color: #a0a4a8;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  outline: none;
+  border: 0px;
+  border-radius: 8px;
+  background-color: #e8e8e8;
+}
+.sign-btn-blue {
+  width: 280px;
+  height: 48px;
+  color: #a0a4a8;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  outline: none;
+  border: 0px;
+  border-radius: 8px;
+  background-color: blue;
+}
+.sign-btn-gray {
+  margin-top: 6px;
+}
+
+.btn-facebook {
+  width: 280px;
+  height: 48px;
+  border: 0px;
+  border-radius: 8px;
+  background-color: #3b5998;
+  outline: none;
+}
+
+.btn-google {
+  width: 280px;
+  height: 48px;
+  border: 0px;
+  border-radius: 8px;
+  background-color: #25282b;
+  outline: none;
+}
+
+.signIn-form {
+  width: 280px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 75px;
+  padding-bottom: 2px;
+}
+
+.signIn-form h1 {
+  width: 400px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 42px;
+  padding-bottom: 32px;
+}
+.signIn-form a {
+  letter-spacing: 0.5px;
+  color: #75787c;
+  padding-top: 12px;
+  padding-bottom: 43px;
+}
+.signIn-form .sign-btn-gray {
+  margin-top: 6px;
+}
+.signIn-form .input-end-label::before {
+  position: relative;
+  left: 1rem;
+  display: flex;
+  content: attr(data-content);
+}
+.signIn-form .input-end-label {
+  display: block;
+  position: relative;
+  max-height: 0;
+  font-weight: 500;
+  pointer-events: none;
+}
+.signIn-form .input-end-label::before {
+  transform: translate3d(20rem, -2.2rem, 0);
+}
+
+.social-media-signin {
+  width: 280px;
+}
+
+.social-media-signin p {
+  text-align: center;
+  color: #25282b;
+  padding-bottom: 8px;
+}
+
+.social-media-signin .btn-facebook {
+  margin-bottom: 19px;
+}
+
+.social-media-signin .btn-google {
+  margin-bottom: 20px;
+}
+
+.signin {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  max-width: 1440px;
+  margin: auto;
+}
