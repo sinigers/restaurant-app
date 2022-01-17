@@ -15,6 +15,7 @@ import "./styles.css";
 import Home from "./components/pages/Home";
 import Menu from "./components/pages/Menu/Menu";
 import CreateProduct from "./components/Products/Create/CreateProduct";
+import Details from "./components/Products/Details/Details";
 import Login from "./components/Auth/Login/Login";
 import Register from "./components/Auth/Register/Register";
 
@@ -30,6 +31,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="menu" element={<Menu />} />
           <Route path="create-product" element={<CreateProduct />} />
+          <Route path="/products/details/:productId" element={<Details />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
         </Routes>

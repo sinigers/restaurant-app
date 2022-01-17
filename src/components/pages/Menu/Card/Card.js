@@ -5,10 +5,11 @@ import "./Card.css";
 const Card = ({ product }) => {
   return (
     <div class="menus d-flex align-items-center">
-      {/* <Link to={`/products/details/${product.id}`}> */}
-      <div class="menu-img rounded-circle">
-        <img class="img-fluid" src={product.imageURL} alt="" />
-      </div>
+      <Link to={`/products/details/${product._id}`}>
+        <div class="menu-img rounded-circle">
+          <img class="img-fluid" src={product.imageURL} alt="" />
+        </div>
+      </Link>
       <div class="text-wrap">
         <div class="row align-items-start">
           <div class="col-8">
@@ -23,7 +24,6 @@ const Card = ({ product }) => {
           {product.body} / {product.alergens}
         </p>
       </div>
-      {/* </Link> */}
     </div>
   );
 };

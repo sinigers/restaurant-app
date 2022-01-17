@@ -30,8 +30,6 @@ const Create = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const genre = selectedValue;
-
     const {
       title,
       price,
