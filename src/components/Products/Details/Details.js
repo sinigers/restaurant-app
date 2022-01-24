@@ -41,7 +41,7 @@ const Details = () => {
             <h3>{product.type}</h3>
             <p class="pt-3">{product.body}</p>
             <h3 class="special-dishes-price">${product.price}</h3>
-            <Link to="#" class="btn-primary mt-3">
+            <Link to={`/edit/${product._id}`} class="btn-primary mt-3">
               edit
             </Link>
 

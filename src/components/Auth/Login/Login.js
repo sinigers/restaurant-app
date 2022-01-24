@@ -1,13 +1,6 @@
 import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
-import { useAuthContext } from "../../../contexts/AuthContext";
-import {
-  useNotificationContext,
-  types
-} from "../../../contexts/NotificationContext";
-import * as authService from "../../../services/authService";
-import InputFormComponent from "../../Common/InputFormComponent/InputFormComponent";
-import { login } from "../../../services/authService";
+
 import { useState } from "react";
 
 const Login = () => {

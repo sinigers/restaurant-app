@@ -5,8 +5,7 @@ export const request = async (method, url, data) => {
     result = fetch(url, {
       method,
       headers: {
-        "content-type": "application/json",
-        "X-Authorization": getToken()
+        "content-type": "application/json"
       },
       body: JSON.stringify()
     });
@@ -14,8 +13,7 @@ export const request = async (method, url, data) => {
     result = fetch(url, {
       method,
       headers: {
-        "content-type": "application/json",
-        "X-Authorization": getToken()
+        "content-type": "application/json"
       },
       body: JSON.stringify(data)
     });
@@ -34,23 +32,7 @@ async function responseHandler(res) {
   }
 }
 
-function getToken() {
-  try {
-    let userItem = localStorage.getItem("user");
-
-    if (!userItem) {
-      throw userItem;
-    }
-
-    let user = JSON.parse(userItem);
-
-    return user.accessToken;
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-export const deleteProduct = request.bind(null, "DELETE");
-export const get = request.bind(null, "GET");
+// export const deleteProduct = request.bind(null, "DELETE");
+// export const get = request.bind(null, "GET");
 export const patch = request.bind(null, "PATCH");
 export const post = request.bind(null, "POST");
