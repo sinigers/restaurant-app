@@ -5,9 +5,8 @@ import Select from "react-select";
 import makeAnimated from "react-select/animated";
 
 import { create } from "../../../services/productService";
-import { optionsTypes } from "./SelectOptions/SelectOption";
+// import { optionsTypes } from "./SelectOptions/SelectOption";
 import { optionsAlergens } from "./SelectOptions/SelectOption";
-import { optionsUnits } from "./SelectOptions/SelectOption";
 
 const Create = () => {
   const animatedComponents = makeAnimated();
@@ -59,9 +58,8 @@ const Create = () => {
     <div className="create">
       <h2>Add new Product</h2>
       <form onSubmit={handleSubmit}>
-        <label for="floatingSelect">Product category:</label>
-        {/* <input type="text" name="type" /> */}
-        <div className="col-sm-6">
+        {/* <label for="floatingSelect">Product category:</label> */}
+        {/* <div className="col-sm-6">
           <Select
             components={animatedComponents}
             options={optionsTypes}
@@ -71,14 +69,27 @@ const Create = () => {
             name="type"
             class="form-select"
           />
-        </div>
+        </div> */}
 
         <div class="form-floating mb-3">
-          <select class="form-select" id="floatingSelect">
+          <select class="form-select" id="floatingSelect" name="type">
             <option selected>Breakfast</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option value="Preorder">Preorder</option>
+            <option value="Starters">Starters</option>
+            <option value="Soups">Soups</option>
+            <option value="Salads">Salads</option>
+            <option value="BBQ">BBQ</option>
+            <option value="with Meat">with Meat</option>
+            <option value="Garnishes">Garnishes</option>
+            <option value="Bread">Bread</option>
+            <option value="without Meat">without Mea</option>
+            <option value="Jam">Jam</option>
+            <option value="Non Alcoholic">Non Alcoholic</option>
+            <option value="Brandy">Brandy</option>
+            <option value="Wiskey">Wiskey</option>
+            <option value="Hot Drinks">Hot Drinks</option>
+            <option value="Beer">Beer</option>
+            <option value="Other">Other</option>
           </select>
           <label for="floatingSelect">Product category:</label>
         </div>
@@ -92,7 +103,7 @@ const Create = () => {
             id="floatingInput"
             placeholder="Title"
           />
-          <label for="floatingInput">Title</label>
+          <label for="floatingInput">Title*</label>
         </div>
         <div class="form-floating mb-3">
           <input
@@ -102,47 +113,62 @@ const Create = () => {
             id="floatingInput"
             placeholder="Price"
           />
-          <label for="floatingInput">Price</label>
+          <label for="floatingInput">Price*</label>
         </div>
         <div class="form-floating mb-3">
           <textarea
             name="body"
-            type="number"
-            class="form-control"
-            id="floatingInput"
-            placeholder="Price"
-          />
-          <label for="floatingInput">Product description:</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            name="weight"
             type="text"
             class="form-control"
             id="floatingInput"
-            placeholder="Weight"
+            placeholder="Description"
           />
-          <label for="floatingInput">Weight</label>
+          <label for="floatingInput">Description</label>
         </div>
 
-        <label>Product unit:</label>
-        <div className="col-sm-6">
-          <Select
-            name="unit"
-            defaultValue
-            components={animatedComponents}
-            options={optionsUnits}
-            className="basic-single"
-            classNamePrefix="Select genre"
-            defaultValue={optionsUnits[0]}
-          />
+        <div style={{ display: "flex" }}>
+          <div class="form-floating mb-3">
+            <input
+              name="weight"
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="Weight"
+            />
+            <label for="floatingInput">Weight*</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <select class="form-select" id="floatingSelect" name="unit">
+              <option value="gr" selected>
+                gram
+              </option>
+              <option value="kg">kilogram</option>
+              <option value="ml">milliliter</option>
+              <option value="l">liter</option>
+              <option value="psc">psc</option>
+              <option value="psc/g">piece/g</option>
+              <option value="psc/k">piece/kg</option>
+            </select>
+            {/* <label for="floatingSelect">Unit*</label> */}
+          </div>
         </div>
+        <select
+          class="form-select"
+          multiple
+          aria-label="multiple select example"
+        >
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
 
         <label>Product alergens:</label>
         <div className="col-sm-6">
           <Select
-            defaultValue
             isMulti
+            // defaultValue={optionsAlergens[0]}
             onChange={valueSelectHandler}
             components={animatedComponents}
             options={optionsAlergens}

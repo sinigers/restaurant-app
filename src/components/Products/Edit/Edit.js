@@ -68,9 +68,9 @@ const Edit = () => {
       productData,
       productId
     ).then((result) => {
-      console.log(productData);
-      console.log("----");
-      console.log(result);
+      // console.log(productData);
+      // console.log("----");
+      // console.log(result);
       // navigate(`/details/${product._id}`);
       navigate(`/menu`);
     });

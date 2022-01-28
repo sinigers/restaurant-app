@@ -3,16 +3,25 @@ import validator from "validator";
 
 const ProductValidations = () => {
   const [errors, setErrors] = useState({
-    description: false,
-    image: false,
-    make: false,
-    model: false,
+    // description: false,
+    // image: false,
+    // make: false,
+    // model: false,
+    // price: false,
+    // year: false,
+    // mileage: false,
+    // seats: false,
+    // doors: false,
+    // luggage: false
+
+    title: false,
     price: false,
-    year: false,
-    mileage: false,
-    seats: false,
-    doors: false,
-    luggage: false
+    body: false,
+    weight: false,
+    unit: false,
+    alergens: false,
+    imageURL: false
+    // type
   });
 
   const imageChangeHandler = (e) => {
@@ -20,7 +29,7 @@ const ProductValidations = () => {
     if (!validator.isURL(value)) {
       setErrors((state) => ({
         ...state,
-        image: "Your image should be valid URL!"
+        imageURL: "Your image should be with valid URL!"
       }));
     } else {
       setErrors((state) => ({ ...state, image: false }));

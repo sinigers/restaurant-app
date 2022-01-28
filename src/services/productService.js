@@ -1,4 +1,5 @@
 import { BASE_URL } from "../constants";
+import useFetch from "react-fetch-hook";
 
 export const create = async (productData) => {
   let res = await fetch(`${BASE_URL}/create`, {

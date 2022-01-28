@@ -1,16 +1,20 @@
 import { useState, useEffect } from "react";
+import Loader from "../../Loader/Loader";
 
 import { getAllProducts } from "../../../services/productService";
 import Card from "./Card/Card";
 
 const Menu = () => {
   const [products, setProducts] = useState([]);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     getAllProducts().then((result) => {
       setProducts(result);
+      setLoader(false);
     });
   }, []);
+  // console.log(products);
 
   return (
     <>
@@ -25,9 +29,22 @@ const Menu = () => {
               <div class="heading-menu">
                 <h3 class="text-center mb-5">Breakfast</h3>
               </div>
-              {products.map((x) => (
+
+              <div>
+                {loader ? (
+                  <Loader />
+                ) : (
+                  <div>
+                    {products.map((x) => (
+                      <Card key={x._id} product={x} />
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* {products.map((x) => (
                 <Card key={x._id} product={x} />
-              ))}
+              ))} */}
             </div>
           </div>
         </div>
